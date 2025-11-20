@@ -1,0 +1,131 @@
+package com.example.altmate_operations.service;
+
+import com.example.altmate_operations.exception.BadRequestException;
+import com.example.altmate_operations.model.User;
+import com.example.altmate_operations.model.UserRole;
+import com.example.altmate_operations.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
+@Service
+@RequiredArgsConstructor
+public class UserService {
+    
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    
+    @Transactional
+    public User createUser(User user) {
+        if (userRepository.existsByEmail(user.getEmail())) {
+            throw new BadRequestException("User with email " + user.getEmail() + " already exists");
+        }
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setCreatedAt(LocalDateTime.now());
+        user.setUpdatedAt(LocalDateTime.now());
+        return userRepository.save(user);
+    }
+    
+    @Transactional
+    public User updateUser(Long userId, User userDetails) {
+        User user = getUserById(userId);
+        user.setFullname(userDetails.getFullname());
+        user.setEmail(userDetails.getEmail());
+        user.setRole(userDetails.getRole());
+        user.setIsActive(userDetails.getIsActive());
+        user.setUpdatedAt(LocalDateTime.now());
+        return userRepository.save(user);
+    }
+    
+    @Transactional
+    public void deleteUser(Long userId) {
+        User user = getUserById(userId);
+        userRepository.delete(user);
+    }
+    
+    @Transactional
+    public User deactivateUser(Long userId) {
+        User user = getUserById(userId);
+        user.setIsActive(false);
+        user.setUpdatedAt(LocalDateTime.now());
+        return userRepository.save(user);
+    }
+    
+    @Transactional
+    public User activateUser(Long userId) {
+        User user = getUserById(userId);
+        user.setIsActive(true);
+        user.setUpdatedAt(LocalDateTime.now());
+        return userRepository.save(user);
+    }
+    
+    @Transactional
+    public void changePassword(Long userId, String oldPassword, String newPassword) {
+        User user = getUserById(userId);
+        if (!passwordEncoder.matches(oldPassword, user.getPassword())) {
+            throw new BadRequestException("Old password is incorrect");
+        }
+        user.setPassword(passwordEncoder.encode(newPassword));
+        user.setUpdatedAt(LocalDateTime.now());
+        userRepository.save(user);
+    }
+    
+    @Transactional
+    public void updateRefreshToken(Long userId, String refreshToken, LocalDateTime expiryDate) {
+        User user = getUserById(userId);
+        user.setRefreshToken(refreshToken);
+        user.setRefreshTokenExpiryDate(expiryDate);
+        userRepository.save(user);
+    }
+    
+    public User getUserById(Long userId) {
+        return userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("User not found with id: " + userId));
+    }
+    
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found with email: " + email));
+    }
+    
+    public Optional<User> findByRefreshToken(String refreshToken) {
+        return userRepository.findByRefreshToken(refreshToken);
+    }
+    
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+    
+    public List<User> getUsersByRole(UserRole role) {
+        return userRepository.findByRole(role);
+    }
+    
+    public List<User> getActiveUsers() {
+        return userRepository.findByIsActive(true);
+    }
+    
+    public List<User> getUsersByRoleAndStatus(UserRole role, Boolean isActive) {
+        return userRepository.findByRoleAndIsActive(role, isActive);
+    }
+    
+    public List<User> getUsersCreatedBy(Long creatorId) {
+        return userRepository.findByCreatedBy(creatorId);
+    }
+    
+    public List<User> searchUsersByName(String name) {
+        return userRepository.searchByName(name);
+    }
+    
+    public List<User> searchUsersByEmail(String email) {
+        return userRepository.searchByEmail(email);
+    }
+    
+    public boolean existsByEmail(String email) {
+        return userRepository.existsByEmail(email);
+    }
+}
