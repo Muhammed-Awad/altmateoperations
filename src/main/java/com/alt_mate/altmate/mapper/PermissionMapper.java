@@ -1,7 +1,7 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.PermissionDTO;
-import com.example.altmate_operations.model.Permission;
+import com.alt_mate.altmate.DTO.PermissionDTO;
+import com.alt_mate.altmate.model.Permission;
 import org.mapstruct.*;
 
 import java.util.List;

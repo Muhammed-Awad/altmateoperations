@@ -1,8 +1,8 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.InboxMessageCreateRequest;
-import com.example.altmate_operations.DTO.InboxMessageDTO;
-import com.example.altmate_operations.model.InboxMessage;
+import com.alt_mate.altmate.DTO.InboxMessageCreateRequest;
+import com.alt_mate.altmate.DTO.InboxMessageDTO;
+import com.alt_mate.altmate.model.InboxMessage;
 import org.mapstruct.*;
 
 import java.util.List;

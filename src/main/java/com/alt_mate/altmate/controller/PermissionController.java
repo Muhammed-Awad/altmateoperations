@@ -1,9 +1,9 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.model.Permission;
-import com.example.altmate_operations.model.PermissionCategory;
-import com.example.altmate_operations.service.PermissionService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.model.Permission;
+import com.alt_mate.altmate.model.PermissionCategory;
+import com.alt_mate.altmate.service.PermissionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,9 +1,9 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.exception.BadRequestException;
-import com.example.altmate_operations.model.Permission;
-import com.example.altmate_operations.model.PermissionCategory;
-import com.example.altmate_operations.repository.PermissionRepository;
+import com.alt_mate.altmate.exception.BadRequestException;
+import com.alt_mate.altmate.model.Permission;
+import com.alt_mate.altmate.model.PermissionCategory;
+import com.alt_mate.altmate.repository.PermissionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

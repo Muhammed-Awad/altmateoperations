@@ -1,7 +1,7 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.DashboardSnapshotDTO;
-import com.example.altmate_operations.model.DashboardSnapshot;
+import com.alt_mate.altmate.DTO.DashboardSnapshotDTO;
+import com.alt_mate.altmate.model.DashboardSnapshot;
 import org.mapstruct.*;
 
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.example.altmate_operations.DTO;
+package com.alt_mate.altmate.DTO;
 
-import com.example.altmate_operations.model.GenerationStatus;
-import com.example.altmate_operations.model.ResponseStyle;
+import com.alt_mate.altmate.model.GenerationStatus;
+import com.alt_mate.altmate.model.ResponseStyle;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,8 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.ClientComplaintCreateRequest;
-import com.example.altmate_operations.DTO.ClientComplaintDTO;
-import com.example.altmate_operations.model.ClientComplaint;
+import com.alt_mate.altmate.DTO.ClientComplaintCreateRequest;
+import com.alt_mate.altmate.DTO.ClientComplaintDTO;
+import com.alt_mate.altmate.model.ClientComplaint;
 import org.mapstruct.*;
 
 import java.util.List;

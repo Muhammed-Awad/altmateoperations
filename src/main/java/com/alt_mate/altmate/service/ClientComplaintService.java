@@ -1,8 +1,8 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.ClientComplaint;
-import com.example.altmate_operations.model.ComplaintStatus;
-import com.example.altmate_operations.repository.ClientComplaintRepository;
+import com.alt_mate.altmate.model.ClientComplaint;
+import com.alt_mate.altmate.model.ComplaintStatus;
+import com.alt_mate.altmate.repository.ClientComplaintRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

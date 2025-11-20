@@ -1,7 +1,7 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.CompetitorAnalysis;
-import com.example.altmate_operations.repository.CompetitorAnalysisRepository;
+import com.alt_mate.altmate.model.CompetitorAnalysis;
+import com.alt_mate.altmate.repository.CompetitorAnalysisRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,9 +1,9 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.*;
-import com.example.altmate_operations.model.AdCampaign;
-import com.example.altmate_operations.model.CampaignStatus;
-import com.example.altmate_operations.service.AdCampaignService;
+import com.alt_mate.altmate.DTO.*;
+import com.alt_mate.altmate.model.AdCampaign;
+import com.alt_mate.altmate.model.CampaignStatus;
+import com.alt_mate.altmate.service.AdCampaignService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

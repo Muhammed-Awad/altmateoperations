@@ -1,9 +1,9 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.AdCampaign;
-import com.example.altmate_operations.model.CampaignObjective;
-import com.example.altmate_operations.model.CampaignStatus;
-import com.example.altmate_operations.repository.AdCampaignRepository;
+import com.alt_mate.altmate.model.AdCampaign;
+import com.alt_mate.altmate.model.CampaignObjective;
+import com.alt_mate.altmate.model.CampaignStatus;
+import com.alt_mate.altmate.repository.AdCampaignRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

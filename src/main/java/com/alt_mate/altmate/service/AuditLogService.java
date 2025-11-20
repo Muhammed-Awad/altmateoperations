@@ -1,9 +1,9 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.AuditAction;
-import com.example.altmate_operations.model.AuditLog;
-import com.example.altmate_operations.model.User;
-import com.example.altmate_operations.repository.AuditLogRepository;
+import com.alt_mate.altmate.model.AuditAction;
+import com.alt_mate.altmate.model.AuditLog;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.repository.AuditLogRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -93,7 +93,7 @@ public class AuditLogService {
     }
     
     public List<AuditLog> getAuditLogsByUser(Long userId) {
-        return auditLogRepository.findByPerformedById(userId);
+        return auditLogRepository.findByUserId(userId);
     }
     
     public List<AuditLog> getAuditLogsByAction(AuditAction action) {

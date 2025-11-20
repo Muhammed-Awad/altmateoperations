@@ -1,7 +1,7 @@
-package com.example.altmate_operations.repository;
+package com.alt_mate.altmate.repository;
 
-import com.example.altmate_operations.model.User;
-import com.example.altmate_operations.model.UserRole;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.model.UserRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

@@ -1,8 +1,8 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.PostCreateRequest;
-import com.example.altmate_operations.DTO.PostDTO;
-import com.example.altmate_operations.model.Post;
+import com.alt_mate.altmate.DTO.PostCreateRequest;
+import com.alt_mate.altmate.DTO.PostDTO;
+import com.alt_mate.altmate.model.Post;
 import org.mapstruct.*;
 
 import java.util.List;

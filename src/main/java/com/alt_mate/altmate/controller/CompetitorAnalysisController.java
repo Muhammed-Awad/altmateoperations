@@ -1,8 +1,8 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.model.CompetitorAnalysis;
-import com.example.altmate_operations.service.CompetitorAnalysisService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.model.CompetitorAnalysis;
+import com.alt_mate.altmate.service.CompetitorAnalysisService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

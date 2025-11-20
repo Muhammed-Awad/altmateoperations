@@ -1,9 +1,9 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.model.ClientComplaint;
-import com.example.altmate_operations.model.ComplaintStatus;
-import com.example.altmate_operations.service.ClientComplaintService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.model.ClientComplaint;
+import com.alt_mate.altmate.model.ComplaintStatus;
+import com.alt_mate.altmate.service.ClientComplaintService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

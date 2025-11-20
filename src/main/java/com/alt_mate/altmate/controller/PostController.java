@@ -1,9 +1,9 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.*;
-import com.example.altmate_operations.model.Post;
-import com.example.altmate_operations.model.PostStatus;
-import com.example.altmate_operations.service.PostService;
+import com.alt_mate.altmate.DTO.*;
+import com.alt_mate.altmate.model.Post;
+import com.alt_mate.altmate.model.PostStatus;
+import com.alt_mate.altmate.service.PostService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;

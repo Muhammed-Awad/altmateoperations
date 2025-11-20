@@ -1,7 +1,7 @@
-package com.example.altmate_operations.repository;
+package com.alt_mate.altmate.repository;
 
-import com.example.altmate_operations.model.InboxMessage;
-import com.example.altmate_operations.model.MessageStatus;
+import com.alt_mate.altmate.model.InboxMessage;
+import com.alt_mate.altmate.model.MessageStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

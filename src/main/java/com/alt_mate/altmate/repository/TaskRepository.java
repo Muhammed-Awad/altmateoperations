@@ -1,9 +1,9 @@
-package com.example.altmate_operations.repository;
+package com.alt_mate.altmate.repository;
 
-import com.example.altmate_operations.model.Task;
-import com.example.altmate_operations.model.TaskPriority;
-import com.example.altmate_operations.model.TaskStatus;
-import com.example.altmate_operations.model.TaskType;
+import com.alt_mate.altmate.model.Task;
+import com.alt_mate.altmate.model.TaskPriority;
+import com.alt_mate.altmate.model.TaskStatus;
+import com.alt_mate.altmate.model.TaskType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

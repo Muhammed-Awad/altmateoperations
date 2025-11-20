@@ -1,8 +1,8 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.AdCampaignCreateRequest;
-import com.example.altmate_operations.DTO.AdCampaignDTO;
-import com.example.altmate_operations.model.AdCampaign;
+import com.alt_mate.altmate.DTO.AdCampaignCreateRequest;
+import com.alt_mate.altmate.DTO.AdCampaignDTO;
+import com.alt_mate.altmate.model.AdCampaign;
 import org.mapstruct.*;
 
 import java.util.List;

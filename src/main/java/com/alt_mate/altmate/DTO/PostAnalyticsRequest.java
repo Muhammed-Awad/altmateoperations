@@ -1,4 +1,4 @@
-package com.example.altmate_operations.DTO;
+package com.alt_mate.altmate.DTO;
 
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;

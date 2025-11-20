@@ -1,7 +1,7 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.ContentGenerationRequestDTO;
-import com.example.altmate_operations.model.ContentGenerationRequest;
+import com.alt_mate.altmate.DTO.ContentGenerationRequestDTO;
+import com.alt_mate.altmate.model.ContentGenerationRequest;
 import org.mapstruct.*;
 
 import java.util.List;

@@ -1,7 +1,7 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.SocialAccountDTO;
-import com.example.altmate_operations.model.SocialAccount;
+import com.alt_mate.altmate.DTO.SocialAccountDTO;
+import com.alt_mate.altmate.model.SocialAccount;
 import org.mapstruct.*;
 
 import java.util.List;

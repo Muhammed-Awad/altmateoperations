@@ -1,7 +1,7 @@
-package com.example.altmate_operations.DTO;
+package com.alt_mate.altmate.DTO;
 
-import com.example.altmate_operations.model.CampaignObjective;
-import com.example.altmate_operations.model.CampaignStatus;
+import com.alt_mate.altmate.model.CampaignObjective;
+import com.alt_mate.altmate.model.CampaignStatus;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

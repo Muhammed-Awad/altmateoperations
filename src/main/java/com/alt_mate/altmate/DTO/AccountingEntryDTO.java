@@ -1,7 +1,7 @@
-package com.example.altmate_operations.DTO;
+package com.alt_mate.altmate.DTO;
 
-import com.example.altmate_operations.model.EntryType;
-import com.example.altmate_operations.model.PaymentStatus;
+import com.alt_mate.altmate.model.EntryType;
+import com.alt_mate.altmate.model.PaymentStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

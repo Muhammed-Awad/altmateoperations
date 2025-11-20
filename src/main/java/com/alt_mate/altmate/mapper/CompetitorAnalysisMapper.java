@@ -1,7 +1,7 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.CompetitorAnalysisDTO;
-import com.example.altmate_operations.model.CompetitorAnalysis;
+import com.alt_mate.altmate.DTO.CompetitorAnalysisDTO;
+import com.alt_mate.altmate.model.CompetitorAnalysis;
 import org.mapstruct.*;
 
 import java.util.List;

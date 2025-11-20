@@ -1,7 +1,7 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.FileMetadataDTO;
-import com.example.altmate_operations.model.FileMetadata;
+import com.alt_mate.altmate.DTO.FileMetadataDTO;
+import com.alt_mate.altmate.model.FileMetadata;
 import org.mapstruct.*;
 
 import java.util.List;

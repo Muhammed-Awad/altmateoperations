@@ -1,6 +1,6 @@
-package com.example.altmate_operations.security;
+package com.alt_mate.altmate.security;
 
-import com.example.altmate_operations.DTO.ApiResponse;
+import com.alt_mate.altmate.DTO.ApiResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

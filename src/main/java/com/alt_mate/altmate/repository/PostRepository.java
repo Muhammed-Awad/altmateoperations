@@ -1,7 +1,7 @@
-package com.example.altmate_operations.repository;
+package com.alt_mate.altmate.repository;
 
-import com.example.altmate_operations.model.Post;
-import com.example.altmate_operations.model.PostStatus;
+import com.alt_mate.altmate.model.Post;
+import com.alt_mate.altmate.model.PostStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

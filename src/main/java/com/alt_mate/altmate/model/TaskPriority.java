@@ -1,4 +1,4 @@
-package com.example.altmate_operations.model;
+package com.alt_mate.altmate.model;
 
 public enum TaskPriority {
     LOW,

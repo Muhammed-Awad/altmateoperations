@@ -1,12 +1,12 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.DTO.CommentCreateRequest;
-import com.example.altmate_operations.DTO.CommentDTO;
-import com.example.altmate_operations.mapper.CommentMapper;
-import com.example.altmate_operations.model.Comment;
-import com.example.altmate_operations.model.CommentStatus;
-import com.example.altmate_operations.service.CommentService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.DTO.CommentCreateRequest;
+import com.alt_mate.altmate.DTO.CommentDTO;
+import com.alt_mate.altmate.mapper.CommentMapper;
+import com.alt_mate.altmate.model.Comment;
+import com.alt_mate.altmate.model.CommentStatus;
+import com.alt_mate.altmate.service.CommentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

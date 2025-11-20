@@ -1,10 +1,10 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.DTO.SocialAccountDTO;
-import com.example.altmate_operations.model.SocialAccount;
-import com.example.altmate_operations.model.SocialPlatform;
-import com.example.altmate_operations.service.SocialAccountService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.DTO.SocialAccountDTO;
+import com.alt_mate.altmate.model.SocialAccount;
+import com.alt_mate.altmate.model.SocialPlatform;
+import com.alt_mate.altmate.service.SocialAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

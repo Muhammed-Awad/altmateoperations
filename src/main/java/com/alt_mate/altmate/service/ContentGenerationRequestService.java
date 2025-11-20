@@ -1,8 +1,8 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.ContentGenerationRequest;
-import com.example.altmate_operations.model.GenerationStatus;
-import com.example.altmate_operations.repository.ContentGenerationRequestRepository;
+import com.alt_mate.altmate.model.ContentGenerationRequest;
+import com.alt_mate.altmate.model.GenerationStatus;
+import com.alt_mate.altmate.repository.ContentGenerationRequestRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

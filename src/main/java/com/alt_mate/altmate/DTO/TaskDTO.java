@@ -1,8 +1,8 @@
-package com.example.altmate_operations.DTO;
+package com.alt_mate.altmate.DTO;
 
-import com.example.altmate_operations.model.TaskPriority;
-import com.example.altmate_operations.model.TaskStatus;
-import com.example.altmate_operations.model.TaskType;
+import com.alt_mate.altmate.model.TaskPriority;
+import com.alt_mate.altmate.model.TaskStatus;
+import com.alt_mate.altmate.model.TaskType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

@@ -1,10 +1,10 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.*;
-import com.example.altmate_operations.model.User;
-import com.example.altmate_operations.repository.UserRepository;
-import com.example.altmate_operations.security.JwtTokenProvider;
-import com.example.altmate_operations.service.UserService;
+import com.alt_mate.altmate.DTO.*;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.repository.UserRepository;
+import com.alt_mate.altmate.security.JwtTokenProvider;
+import com.alt_mate.altmate.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

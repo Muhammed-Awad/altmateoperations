@@ -1,7 +1,7 @@
-package com.example.altmate_operations.security;
+package com.alt_mate.altmate.security;
 
-import com.example.altmate_operations.model.User;
-import com.example.altmate_operations.repository.UserRepository;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

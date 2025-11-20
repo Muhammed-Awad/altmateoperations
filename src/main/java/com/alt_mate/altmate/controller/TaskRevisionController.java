@@ -1,8 +1,8 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.model.TaskRevision;
-import com.example.altmate_operations.service.TaskRevisionService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.model.TaskRevision;
+import com.alt_mate.altmate.service.TaskRevisionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

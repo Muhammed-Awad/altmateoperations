@@ -1,9 +1,9 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.exception.BadRequestException;
-import com.example.altmate_operations.model.User;
-import com.example.altmate_operations.model.UserRole;
-import com.example.altmate_operations.repository.UserRepository;
+import com.alt_mate.altmate.exception.BadRequestException;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.model.UserRole;
+import com.alt_mate.altmate.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

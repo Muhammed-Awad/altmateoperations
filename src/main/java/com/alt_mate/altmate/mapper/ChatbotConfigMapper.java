@@ -1,7 +1,7 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.ChatbotConfigDTO;
-import com.example.altmate_operations.model.ChatbotConfig;
+import com.alt_mate.altmate.DTO.ChatbotConfigDTO;
+import com.alt_mate.altmate.model.ChatbotConfig;
 import org.mapstruct.*;
 
 import java.util.List;

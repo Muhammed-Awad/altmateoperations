@@ -1,4 +1,4 @@
-package com.example.altmate_operations.security;
+package com.alt_mate.altmate.security;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;

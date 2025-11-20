@@ -1,10 +1,10 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.*;
-import com.example.altmate_operations.model.Task;
-import com.example.altmate_operations.model.TaskStatus;
-import com.example.altmate_operations.model.TaskType;
-import com.example.altmate_operations.service.TaskService;
+import com.alt_mate.altmate.DTO.*;
+import com.alt_mate.altmate.model.Task;
+import com.alt_mate.altmate.model.TaskStatus;
+import com.alt_mate.altmate.model.TaskType;
+import com.alt_mate.altmate.service.TaskService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

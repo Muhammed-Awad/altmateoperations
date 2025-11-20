@@ -1,4 +1,4 @@
-package com.example.altmate_operations.security;
+package com.alt_mate.altmate.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

@@ -1,7 +1,7 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.DashboardSnapshot;
-import com.example.altmate_operations.repository.DashboardSnapshotRepository;
+import com.alt_mate.altmate.model.DashboardSnapshot;
+import com.alt_mate.altmate.repository.DashboardSnapshotRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

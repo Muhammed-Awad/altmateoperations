@@ -1,9 +1,9 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.Client;
-import com.example.altmate_operations.model.ClientIndustry;
-import com.example.altmate_operations.model.User;
-import com.example.altmate_operations.repository.ClientRepository;
+import com.alt_mate.altmate.model.Client;
+import com.alt_mate.altmate.model.ClientIndustry;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

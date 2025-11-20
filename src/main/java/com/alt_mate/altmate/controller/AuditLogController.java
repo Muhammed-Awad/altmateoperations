@@ -1,9 +1,9 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.model.AuditAction;
-import com.example.altmate_operations.model.AuditLog;
-import com.example.altmate_operations.service.AuditLogService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.model.AuditAction;
+import com.alt_mate.altmate.model.AuditLog;
+import com.alt_mate.altmate.service.AuditLogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;

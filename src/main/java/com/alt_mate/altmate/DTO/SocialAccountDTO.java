@@ -1,6 +1,6 @@
-package com.example.altmate_operations.DTO;
+package com.alt_mate.altmate.DTO;
 
-import com.example.altmate_operations.model.SocialPlatform;
+import com.alt_mate.altmate.model.SocialPlatform;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

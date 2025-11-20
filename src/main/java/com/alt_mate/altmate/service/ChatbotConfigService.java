@@ -1,9 +1,9 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.exception.BadRequestException;
-import com.example.altmate_operations.model.ChatbotConfig;
-import com.example.altmate_operations.model.ChatbotType;
-import com.example.altmate_operations.repository.ChatbotConfigRepository;
+import com.alt_mate.altmate.exception.BadRequestException;
+import com.alt_mate.altmate.model.ChatbotConfig;
+import com.alt_mate.altmate.model.ChatbotType;
+import com.alt_mate.altmate.repository.ChatbotConfigRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,7 +1,7 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.TaskRevisionDTO;
-import com.example.altmate_operations.model.TaskRevision;
+import com.alt_mate.altmate.DTO.TaskRevisionDTO;
+import com.alt_mate.altmate.model.TaskRevision;
 import org.mapstruct.*;
 
 import java.util.List;

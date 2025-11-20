@@ -1,7 +1,7 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.AuditLogDTO;
-import com.example.altmate_operations.model.AuditLog;
+import com.alt_mate.altmate.DTO.AuditLogDTO;
+import com.alt_mate.altmate.model.AuditLog;
 import org.mapstruct.*;
 
 import java.util.List;

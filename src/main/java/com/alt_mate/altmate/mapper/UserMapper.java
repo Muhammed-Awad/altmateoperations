@@ -1,9 +1,9 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.UserCreateRequest;
-import com.example.altmate_operations.DTO.UserDTO;
-import com.example.altmate_operations.DTO.UserUpdateRequest;
-import com.example.altmate_operations.model.User;
+import com.alt_mate.altmate.DTO.UserCreateRequest;
+import com.alt_mate.altmate.DTO.UserDTO;
+import com.alt_mate.altmate.DTO.UserUpdateRequest;
+import com.alt_mate.altmate.model.User;
 import org.mapstruct.*;
 
 import java.util.List;

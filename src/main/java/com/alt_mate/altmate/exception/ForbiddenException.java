@@ -1,4 +1,4 @@
-package com.example.altmate_operations.exception;
+package com.alt_mate.altmate.exception;
 
 public class ForbiddenException extends RuntimeException {
     public ForbiddenException(String message) {

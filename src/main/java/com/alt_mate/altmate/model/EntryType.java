@@ -1,4 +1,4 @@
-package com.example.altmate_operations.model;
+package com.alt_mate.altmate.model;
 
 public enum EntryType {
     COLLECTION_AD,       // Ad budget collection (تحصيل اعلانات)

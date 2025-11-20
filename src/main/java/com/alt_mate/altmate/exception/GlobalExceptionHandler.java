@@ -1,6 +1,6 @@
-package com.example.altmate_operations.exception;
+package com.alt_mate.altmate.exception;
 
-import com.example.altmate_operations.DTO.ApiResponse;
+import com.alt_mate.altmate.DTO.ApiResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;

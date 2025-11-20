@@ -1,8 +1,8 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.Comment;
-import com.example.altmate_operations.model.CommentStatus;
-import com.example.altmate_operations.repository.CommentRepository;
+import com.alt_mate.altmate.model.Comment;
+import com.alt_mate.altmate.model.CommentStatus;
+import com.alt_mate.altmate.repository.CommentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

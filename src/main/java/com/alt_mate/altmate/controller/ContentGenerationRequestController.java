@@ -1,9 +1,9 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.model.ContentGenerationRequest;
-import com.example.altmate_operations.model.GenerationStatus;
-import com.example.altmate_operations.service.ContentGenerationRequestService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.model.ContentGenerationRequest;
+import com.alt_mate.altmate.model.GenerationStatus;
+import com.alt_mate.altmate.service.ContentGenerationRequestService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

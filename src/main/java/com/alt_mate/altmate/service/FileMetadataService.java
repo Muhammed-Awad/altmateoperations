@@ -1,8 +1,8 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.FileMetadata;
-import com.example.altmate_operations.model.FileType;
-import com.example.altmate_operations.repository.FileMetadataRepository;
+import com.alt_mate.altmate.model.FileMetadata;
+import com.alt_mate.altmate.model.FileType;
+import com.alt_mate.altmate.repository.FileMetadataRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

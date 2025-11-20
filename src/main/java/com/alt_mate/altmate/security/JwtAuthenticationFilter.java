@@ -1,4 +1,4 @@
-package com.example.altmate_operations.security;
+package com.alt_mate.altmate.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

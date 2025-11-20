@@ -1,9 +1,9 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.*;
-import com.example.altmate_operations.model.Client;
-import com.example.altmate_operations.model.ClientIndustry;
-import com.example.altmate_operations.service.ClientService;
+import com.alt_mate.altmate.DTO.*;
+import com.alt_mate.altmate.model.Client;
+import com.alt_mate.altmate.model.ClientIndustry;
+import com.alt_mate.altmate.service.ClientService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

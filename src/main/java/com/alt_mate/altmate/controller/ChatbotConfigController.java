@@ -1,10 +1,10 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.DTO.ChatbotConfigDTO;
-import com.example.altmate_operations.model.ChatbotConfig;
-import com.example.altmate_operations.model.ChatbotType;
-import com.example.altmate_operations.service.ChatbotConfigService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.DTO.ChatbotConfigDTO;
+import com.alt_mate.altmate.model.ChatbotConfig;
+import com.alt_mate.altmate.model.ChatbotType;
+import com.alt_mate.altmate.service.ChatbotConfigService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

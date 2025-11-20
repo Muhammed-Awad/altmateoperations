@@ -1,6 +1,6 @@
-package com.example.altmate_operations.repository;
+package com.alt_mate.altmate.repository;
 
-import com.example.altmate_operations.model.TopPost;
+import com.alt_mate.altmate.model.TopPost;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

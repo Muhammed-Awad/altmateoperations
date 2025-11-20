@@ -1,10 +1,10 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.*;
-import com.example.altmate_operations.mapper.UserMapper;
-import com.example.altmate_operations.model.User;
-import com.example.altmate_operations.model.UserRole;
-import com.example.altmate_operations.service.UserService;
+import com.alt_mate.altmate.DTO.*;
+import com.alt_mate.altmate.mapper.UserMapper;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.model.UserRole;
+import com.alt_mate.altmate.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,12 +1,12 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.ApiResponse;
-import com.example.altmate_operations.DTO.InboxMessageCreateRequest;
-import com.example.altmate_operations.DTO.InboxMessageDTO;
-import com.example.altmate_operations.mapper.InboxMessageMapper;
-import com.example.altmate_operations.model.InboxMessage;
-import com.example.altmate_operations.model.MessageStatus;
-import com.example.altmate_operations.service.InboxMessageService;
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.DTO.InboxMessageCreateRequest;
+import com.alt_mate.altmate.DTO.InboxMessageDTO;
+import com.alt_mate.altmate.mapper.InboxMessageMapper;
+import com.alt_mate.altmate.model.InboxMessage;
+import com.alt_mate.altmate.model.MessageStatus;
+import com.alt_mate.altmate.service.InboxMessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

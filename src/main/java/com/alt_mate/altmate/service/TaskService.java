@@ -1,10 +1,10 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.Task;
-import com.example.altmate_operations.model.TaskPriority;
-import com.example.altmate_operations.model.TaskStatus;
-import com.example.altmate_operations.model.TaskType;
-import com.example.altmate_operations.repository.TaskRepository;
+import com.alt_mate.altmate.model.Task;
+import com.alt_mate.altmate.model.TaskPriority;
+import com.alt_mate.altmate.model.TaskStatus;
+import com.alt_mate.altmate.model.TaskType;
+import com.alt_mate.altmate.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,9 +1,9 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.AccountingEntry;
-import com.example.altmate_operations.model.EntryType;
-import com.example.altmate_operations.model.PaymentStatus;
-import com.example.altmate_operations.repository.AccountingEntryRepository;
+import com.alt_mate.altmate.model.AccountingEntry;
+import com.alt_mate.altmate.model.EntryType;
+import com.alt_mate.altmate.model.PaymentStatus;
+import com.alt_mate.altmate.repository.AccountingEntryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

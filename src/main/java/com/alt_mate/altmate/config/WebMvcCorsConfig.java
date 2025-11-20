@@ -1,4 +1,4 @@
-package com.example.altmate_operations.config;
+package com.alt_mate.altmate.config;
 
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;

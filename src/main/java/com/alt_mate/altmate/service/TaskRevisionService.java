@@ -1,7 +1,7 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.TaskRevision;
-import com.example.altmate_operations.repository.TaskRevisionRepository;
+import com.alt_mate.altmate.model.TaskRevision;
+import com.alt_mate.altmate.repository.TaskRevisionRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

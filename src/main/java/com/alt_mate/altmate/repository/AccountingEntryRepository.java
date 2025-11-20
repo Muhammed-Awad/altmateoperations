@@ -1,8 +1,8 @@
-package com.example.altmate_operations.repository;
+package com.alt_mate.altmate.repository;
 
-import com.example.altmate_operations.model.AccountingEntry;
-import com.example.altmate_operations.model.EntryType;
-import com.example.altmate_operations.model.PaymentStatus;
+import com.alt_mate.altmate.model.AccountingEntry;
+import com.alt_mate.altmate.model.EntryType;
+import com.alt_mate.altmate.model.PaymentStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

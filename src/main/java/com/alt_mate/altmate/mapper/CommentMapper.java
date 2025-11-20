@@ -1,8 +1,8 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.CommentCreateRequest;
-import com.example.altmate_operations.DTO.CommentDTO;
-import com.example.altmate_operations.model.Comment;
+import com.alt_mate.altmate.DTO.CommentCreateRequest;
+import com.alt_mate.altmate.DTO.CommentDTO;
+import com.alt_mate.altmate.model.Comment;
 import org.mapstruct.*;
 
 import java.util.List;

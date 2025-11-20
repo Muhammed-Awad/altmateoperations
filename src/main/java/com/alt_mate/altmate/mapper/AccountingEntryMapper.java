@@ -1,8 +1,8 @@
-package com.example.altmate_operations.mapper;
+package com.alt_mate.altmate.mapper;
 
-import com.example.altmate_operations.DTO.AccountingEntryCreateRequest;
-import com.example.altmate_operations.DTO.AccountingEntryDTO;
-import com.example.altmate_operations.model.AccountingEntry;
+import com.alt_mate.altmate.DTO.AccountingEntryCreateRequest;
+import com.alt_mate.altmate.DTO.AccountingEntryDTO;
+import com.alt_mate.altmate.model.AccountingEntry;
 import org.mapstruct.*;
 
 import java.util.List;

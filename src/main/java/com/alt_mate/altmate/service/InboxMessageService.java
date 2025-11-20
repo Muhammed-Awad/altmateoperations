@@ -1,8 +1,8 @@
-package com.example.altmate_operations.service;
+package com.alt_mate.altmate.service;
 
-import com.example.altmate_operations.model.InboxMessage;
-import com.example.altmate_operations.model.MessageStatus;
-import com.example.altmate_operations.repository.InboxMessageRepository;
+import com.alt_mate.altmate.model.InboxMessage;
+import com.alt_mate.altmate.model.MessageStatus;
+import com.alt_mate.altmate.repository.InboxMessageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

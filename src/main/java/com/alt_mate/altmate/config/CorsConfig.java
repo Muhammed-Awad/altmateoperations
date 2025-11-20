@@ -1,4 +1,4 @@
-package com.example.altmate_operations.config;
+package com.alt_mate.altmate.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

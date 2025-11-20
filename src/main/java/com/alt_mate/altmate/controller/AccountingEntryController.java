@@ -1,10 +1,10 @@
-package com.example.altmate_operations.controller;
+package com.alt_mate.altmate.controller;
 
-import com.example.altmate_operations.DTO.*;
-import com.example.altmate_operations.model.AccountingEntry;
-import com.example.altmate_operations.model.EntryType;
-import com.example.altmate_operations.model.PaymentStatus;
-import com.example.altmate_operations.service.AccountingEntryService;
+import com.alt_mate.altmate.DTO.*;
+import com.alt_mate.altmate.model.AccountingEntry;
+import com.alt_mate.altmate.model.EntryType;
+import com.alt_mate.altmate.model.PaymentStatus;
+import com.alt_mate.altmate.service.AccountingEntryService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
