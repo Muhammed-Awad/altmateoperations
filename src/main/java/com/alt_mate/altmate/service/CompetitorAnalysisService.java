@@ -48,7 +48,7 @@ public class CompetitorAnalysisService {
     }
     
     public List<CompetitorAnalysis> getAnalysesByClient(Long clientId) {
-        return competitorAnalysisRepository.findByClientId(clientId);
+        return competitorAnalysisRepository.findByRequestClientId(clientId);
     }
     
     public CompetitorAnalysis getLatestAnalysisByClient(Long clientId) {

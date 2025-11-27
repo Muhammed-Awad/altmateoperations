@@ -17,7 +17,7 @@ public interface InboxMessageRepository extends JpaRepository<InboxMessage, Long
     
     List<InboxMessage> findByStatus(MessageStatus status);
     
-    List<InboxMessage> findByRespondedById(Long userId);
+    List<InboxMessage> findByRepliedById(Long userId);
     
     List<InboxMessage> findBySocialAccountIdAndStatus(Long socialAccountId, MessageStatus status);
     

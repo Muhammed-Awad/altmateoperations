@@ -17,7 +17,7 @@ public interface ClientComplaintRepository extends JpaRepository<ClientComplaint
     
     List<ClientComplaint> findByStatus(ComplaintStatus status);
     
-    List<ClientComplaint> findByResolvedById(Long userId);
+    List<ClientComplaint> findByAssignedToId(Long userId);
     
     List<ClientComplaint> findByClientIdAndStatus(Long clientId, ComplaintStatus status);
     

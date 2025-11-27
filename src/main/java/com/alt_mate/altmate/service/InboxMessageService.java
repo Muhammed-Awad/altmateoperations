@@ -119,7 +119,7 @@ public class InboxMessageService {
     }
     
     public List<InboxMessage> getMessagesByResponder(Long userId) {
-        return inboxMessageRepository.findByRespondedById(userId);
+        return inboxMessageRepository.findByRepliedById(userId);
     }
     
     public List<InboxMessage> getMessagesByAccountAndStatus(Long socialAccountId, MessageStatus status) {

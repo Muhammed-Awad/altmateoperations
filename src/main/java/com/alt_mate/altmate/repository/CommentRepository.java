@@ -17,7 +17,7 @@ public interface CommentRepository extends JpaRepository<Comment, Long> {
     
     List<Comment> findByStatus(CommentStatus status);
     
-    List<Comment> findByRespondedById(Long userId);
+    List<Comment> findByRepliedById(Long userId);
     
     List<Comment> findByPostIdAndStatus(Long postId, CommentStatus status);
     

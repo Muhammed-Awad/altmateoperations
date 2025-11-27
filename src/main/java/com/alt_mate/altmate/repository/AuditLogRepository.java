@@ -38,6 +38,6 @@ public interface AuditLogRepository extends JpaRepository<AuditLog, Long> {
     @Query("SELECT al FROM AuditLog al ORDER BY al.createdAt DESC")
     List<AuditLog> findAllOrderByTimestampDesc();
     
-    @Query("SELECT COUNT(al) FROM AuditLog al WHERE al.performedBy.id = :userId")
+    @Query("SELECT COUNT(al) FROM AuditLog al WHERE al.user.id = :userId")
     Long countActionsByUser(@Param("userId") Long userId);
 }

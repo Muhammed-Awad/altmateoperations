@@ -103,7 +103,7 @@ public class CommentService {
     }
     
     public List<Comment> getCommentsByResponder(Long userId) {
-        return commentRepository.findByRespondedById(userId);
+        return commentRepository.findByRepliedById(userId);
     }
     
     public List<Comment> getCommentsByPostAndStatus(Long postId, CommentStatus status) {

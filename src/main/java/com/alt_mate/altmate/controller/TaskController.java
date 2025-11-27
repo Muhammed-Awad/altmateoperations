@@ -1,10 +1,14 @@
 package com.alt_mate.altmate.controller;
 
 import com.alt_mate.altmate.DTO.*;
+import com.alt_mate.altmate.model.Client;
 import com.alt_mate.altmate.model.Task;
 import com.alt_mate.altmate.model.TaskStatus;
 import com.alt_mate.altmate.model.TaskType;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.service.ClientService;
 import com.alt_mate.altmate.service.TaskService;
+import com.alt_mate.altmate.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,6 +24,8 @@ import java.util.stream.Collectors;
 public class TaskController {
     
     private final TaskService taskService;
+    private final ClientService clientService;
+    private final UserService userService;
     
     @PostMapping
     public ResponseEntity<ApiResponse<TaskDTO>> createTask(@Valid @RequestBody TaskCreateRequest request) {
@@ -162,6 +168,25 @@ public class TaskController {
         task.setReferenceImages(request.getReferenceImages());
         task.setMoodBoard(request.getMoodBoard());
         task.setShootDate(request.getShootDate());
+        
+        // Set Client relationship
+        if (request.getClientId() != null) {
+            Client client = clientService.getClientById(request.getClientId());
+            task.setClient(client);
+        }
+        
+        // Set AssignedTo relationship
+        if (request.getAssignedToId() != null) {
+            User assignedTo = userService.getUserById(request.getAssignedToId());
+            task.setAssignedTo(assignedTo);
+        }
+        
+        // Set AssignedBy relationship
+        if (request.getAssignedById() != null) {
+            User assignedBy = userService.getUserById(request.getAssignedById());
+            task.setAssignedBy(assignedBy);
+        }
+        
         return task;
     }
 }

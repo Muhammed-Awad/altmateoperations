@@ -60,7 +60,7 @@ public class FileMetadataService {
     }
     
     public Optional<FileMetadata> getFileMetadataByUrl(String fileUrl) {
-        return fileMetadataRepository.findByFileUrl(fileUrl);
+        return fileMetadataRepository.findByGoogleDriveUrl(fileUrl);
     }
     
     public List<FileMetadata> getAllFileMetadata() {

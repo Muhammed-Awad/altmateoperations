@@ -11,6 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class CommentCreateRequest {
     
+    @NotNull(message = "Social account ID is required")
+    private Long socialAccountId;
+    
     @NotBlank(message = "Commenter name is required")
     private String commenterName;
     

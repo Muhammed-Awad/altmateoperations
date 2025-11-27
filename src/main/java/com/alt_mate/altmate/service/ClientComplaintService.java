@@ -97,7 +97,7 @@ public class ClientComplaintService {
     }
     
     public List<ClientComplaint> getComplaintsByResolver(Long userId) {
-        return clientComplaintRepository.findByResolvedById(userId);
+        return clientComplaintRepository.findByAssignedToId(userId);
     }
     
     public List<ClientComplaint> getComplaintsByClientAndStatus(Long clientId, ComplaintStatus status) {

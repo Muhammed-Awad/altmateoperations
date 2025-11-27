@@ -14,7 +14,7 @@ public interface ProductInfoRepository extends JpaRepository<ProductInfo, Long> 
     
     List<ProductInfo> findByChatbotConfigId(Long chatbotConfigId);
     
-    @Query("SELECT p FROM ProductInfo p WHERE p.chatbotConfig.id = :configId AND p.name LIKE %:name%")
+    @Query("SELECT p FROM ProductInfo p WHERE p.chatbotConfig.id = :configId AND p.productName LIKE %:name%")
     List<ProductInfo> searchByName(@Param("configId") Long configId, 
                                    @Param("name") String name);
     

@@ -6,7 +6,11 @@ import com.alt_mate.altmate.DTO.CommentDTO;
 import com.alt_mate.altmate.mapper.CommentMapper;
 import com.alt_mate.altmate.model.Comment;
 import com.alt_mate.altmate.model.CommentStatus;
+import com.alt_mate.altmate.model.Post;
+import com.alt_mate.altmate.model.SocialAccount;
 import com.alt_mate.altmate.service.CommentService;
+import com.alt_mate.altmate.service.PostService;
+import com.alt_mate.altmate.service.SocialAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,10 +26,23 @@ public class CommentController {
     
     private final CommentService commentService;
     private final CommentMapper commentMapper;
+    private final PostService postService;
+    private final SocialAccountService socialAccountService;
     
     @PostMapping
     public ResponseEntity<ApiResponse<CommentDTO>> createComment(@Valid @RequestBody CommentCreateRequest request) {
         Comment comment = commentMapper.toEntity(request);
+        
+        // Set relationships manually
+        if (request.getPostId() != null) {
+            Post post = postService.getPostById(request.getPostId());
+            comment.setPost(post);
+        }
+        if (request.getSocialAccountId() != null) {
+            SocialAccount socialAccount = socialAccountService.getSocialAccountById(request.getSocialAccountId());
+            comment.setSocialAccount(socialAccount);
+        }
+        
         Comment createdComment = commentService.createComment(comment);
         CommentDTO dto = commentMapper.toDTO(createdComment);
         return ResponseEntity.status(HttpStatus.CREATED)

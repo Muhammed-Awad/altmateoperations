@@ -2,9 +2,11 @@ package com.alt_mate.altmate.controller;
 
 import com.alt_mate.altmate.DTO.*;
 import com.alt_mate.altmate.model.AccountingEntry;
+import com.alt_mate.altmate.model.Client;
 import com.alt_mate.altmate.model.EntryType;
 import com.alt_mate.altmate.model.PaymentStatus;
 import com.alt_mate.altmate.service.AccountingEntryService;
+import com.alt_mate.altmate.service.ClientService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,6 +23,7 @@ import java.util.stream.Collectors;
 public class AccountingEntryController {
     
     private final AccountingEntryService accountingEntryService;
+    private final ClientService clientService;
     
     @PostMapping
     public ResponseEntity<ApiResponse<AccountingEntryDTO>> createEntry(@Valid @RequestBody AccountingEntryCreateRequest request) {
@@ -140,6 +143,13 @@ public class AccountingEntryController {
         entry.setPaidDate(request.getPaidDate());
         entry.setDescription(request.getDescription());
         entry.setInvoiceNumber(request.getInvoiceNumber());
+        
+        // Set Client relationship
+        if (request.getClientId() != null) {
+            Client client = clientService.getClientById(request.getClientId());
+            entry.setClient(client);
+        }
+        
         return entry;
     }
 }

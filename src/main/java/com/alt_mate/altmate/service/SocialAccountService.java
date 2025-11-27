@@ -69,7 +69,7 @@ public class SocialAccountService {
     }
     
     public Optional<SocialAccount> getSocialAccountByPlatformId(String platformAccountId) {
-        return socialAccountRepository.findByPlatformAccountId(platformAccountId);
+        return socialAccountRepository.findByAccountId(platformAccountId);
     }
     
     public List<SocialAccount> getAllSocialAccounts() {

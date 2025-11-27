@@ -18,8 +18,11 @@ public interface CommentMapper {
     
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "post", ignore = true)
+    @Mapping(target = "socialAccount", ignore = true)
     @Mapping(target = "commentedAt", ignore = true)
     @Mapping(target = "respondedAt", ignore = true)
+    @Mapping(target = "repliedBy", ignore = true)
+    @Mapping(target = "repliedAt", ignore = true)
     @Mapping(target = "status", constant = "PENDING")
     Comment toEntity(CommentCreateRequest request);
 }

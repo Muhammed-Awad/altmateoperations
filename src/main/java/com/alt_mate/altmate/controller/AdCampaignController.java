@@ -3,7 +3,13 @@ package com.alt_mate.altmate.controller;
 import com.alt_mate.altmate.DTO.*;
 import com.alt_mate.altmate.model.AdCampaign;
 import com.alt_mate.altmate.model.CampaignStatus;
+import com.alt_mate.altmate.model.Client;
+import com.alt_mate.altmate.model.SocialAccount;
+import com.alt_mate.altmate.model.User;
 import com.alt_mate.altmate.service.AdCampaignService;
+import com.alt_mate.altmate.service.ClientService;
+import com.alt_mate.altmate.service.SocialAccountService;
+import com.alt_mate.altmate.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -20,6 +26,9 @@ import java.util.stream.Collectors;
 public class AdCampaignController {
     
     private final AdCampaignService adCampaignService;
+    private final ClientService clientService;
+    private final SocialAccountService socialAccountService;
+    private final UserService userService;
     
     @PostMapping
     public ResponseEntity<ApiResponse<AdCampaignDTO>> createCampaign(@Valid @RequestBody AdCampaignCreateRequest request) {
@@ -156,6 +165,25 @@ public class AdCampaignController {
         campaign.setStatus(request.getStatus());
         campaign.setStartDate(request.getStartDate());
         campaign.setEndDate(request.getEndDate());
+        
+        // Set Client relationship
+        if (request.getClientId() != null) {
+            Client client = clientService.getClientById(request.getClientId());
+            campaign.setClient(client);
+        }
+        
+        // Set SocialAccount relationship
+        if (request.getSocialAccountId() != null) {
+            SocialAccount account = socialAccountService.getSocialAccountById(request.getSocialAccountId());
+            campaign.setSocialAccount(account);
+        }
+        
+        // Set ManagedBy relationship
+        if (request.getManagedById() != null) {
+            User managedBy = userService.getUserById(request.getManagedById());
+            campaign.setManagedBy(managedBy);
+        }
+        
         return campaign;
     }
 }

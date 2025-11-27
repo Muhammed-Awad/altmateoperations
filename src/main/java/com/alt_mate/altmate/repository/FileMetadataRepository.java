@@ -22,7 +22,7 @@ public interface FileMetadataRepository extends JpaRepository<FileMetadata, Long
     
     List<FileMetadata> findByClientIdAndFileType(Long clientId, FileType fileType);
     
-    Optional<FileMetadata> findByFileUrl(String fileUrl);
+    Optional<FileMetadata> findByGoogleDriveUrl(String googleDriveUrl);
     
     @Query("SELECT fm FROM FileMetadata fm WHERE fm.uploadedAt BETWEEN :startDate AND :endDate")
     List<FileMetadata> findByUploadedAtBetween(@Param("startDate") LocalDateTime startDate, 

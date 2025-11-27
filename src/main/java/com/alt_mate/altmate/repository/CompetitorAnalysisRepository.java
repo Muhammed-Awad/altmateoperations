@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface CompetitorAnalysisRepository extends JpaRepository<CompetitorAnalysis, Long> {
     
-    List<CompetitorAnalysis> findByClientId(Long clientId);
+    List<CompetitorAnalysis> findByRequestClientId(Long clientId);
     
     List<CompetitorAnalysis> findByCompetitorName(String competitorName);
     
@@ -20,10 +20,10 @@ public interface CompetitorAnalysisRepository extends JpaRepository<CompetitorAn
     List<CompetitorAnalysis> findByAnalyzedAtBetween(@Param("startDate") LocalDateTime startDate, 
                                                      @Param("endDate") LocalDateTime endDate);
     
-    @Query("SELECT ca FROM CompetitorAnalysis ca WHERE ca.client.id = :clientId ORDER BY ca.analyzedAt DESC")
+    @Query("SELECT ca FROM CompetitorAnalysis ca WHERE ca.request.client.id = :clientId ORDER BY ca.analyzedAt DESC")
     List<CompetitorAnalysis> findByClientIdOrderByAnalyzedAtDesc(@Param("clientId") Long clientId);
     
-    @Query("SELECT ca FROM CompetitorAnalysis ca WHERE ca.client.id = :clientId AND ca.competitorName = :competitorName")
+    @Query("SELECT ca FROM CompetitorAnalysis ca WHERE ca.request.client.id = :clientId AND ca.competitorName = :competitorName")
     List<CompetitorAnalysis> findByClientIdAndCompetitorName(@Param("clientId") Long clientId, 
                                                              @Param("competitorName") String competitorName);
 }

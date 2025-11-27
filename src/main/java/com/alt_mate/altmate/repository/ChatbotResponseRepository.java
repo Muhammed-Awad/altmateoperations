@@ -14,11 +14,11 @@ public interface ChatbotResponseRepository extends JpaRepository<ChatbotResponse
     
     List<ChatbotResponse> findByChatbotConfigId(Long chatbotConfigId);
     
-    @Query("SELECT cr FROM ChatbotResponse cr WHERE cr.chatbotConfig.id = :configId AND cr.triggerKeyword = :keyword")
+    @Query("SELECT cr FROM ChatbotResponse cr WHERE cr.chatbotConfig.id = :configId AND cr.trigger = :keyword")
     Optional<ChatbotResponse> findByConfigIdAndKeyword(@Param("configId") Long configId, 
                                                         @Param("keyword") String keyword);
     
-    @Query("SELECT cr FROM ChatbotResponse cr WHERE cr.chatbotConfig.id = :configId AND LOWER(cr.triggerKeyword) LIKE LOWER(CONCAT('%', :keyword, '%'))")
+    @Query("SELECT cr FROM ChatbotResponse cr WHERE cr.chatbotConfig.id = :configId AND LOWER(cr.trigger) LIKE LOWER(CONCAT('%', :keyword, '%'))")
     List<ChatbotResponse> searchByKeyword(@Param("configId") Long configId, 
                                           @Param("keyword") String keyword);
 }

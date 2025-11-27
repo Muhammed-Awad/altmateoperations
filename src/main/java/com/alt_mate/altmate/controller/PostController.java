@@ -1,9 +1,15 @@
 package com.alt_mate.altmate.controller;
 
 import com.alt_mate.altmate.DTO.*;
+import com.alt_mate.altmate.model.Client;
 import com.alt_mate.altmate.model.Post;
 import com.alt_mate.altmate.model.PostStatus;
+import com.alt_mate.altmate.model.SocialAccount;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.service.ClientService;
 import com.alt_mate.altmate.service.PostService;
+import com.alt_mate.altmate.service.SocialAccountService;
+import com.alt_mate.altmate.service.UserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -21,6 +27,9 @@ import java.util.stream.Collectors;
 public class PostController {
     
     private final PostService postService;
+    private final ClientService clientService;
+    private final SocialAccountService socialAccountService;
+    private final UserService userService;
     
     @PostMapping
     public ResponseEntity<ApiResponse<PostDTO>> createPost(@Valid @RequestBody PostCreateRequest request) {
@@ -169,6 +178,25 @@ public class PostController {
         post.setMediaUrls(request.getMediaUrls());
         post.setStatus(request.getStatus());
         post.setScheduledAt(request.getScheduledAt());
+        
+        // Set Client relationship
+        if (request.getClientId() != null) {
+            Client client = clientService.getClientById(request.getClientId());
+            post.setClient(client);
+        }
+        
+        // Set SocialAccount relationship
+        if (request.getSocialAccountId() != null) {
+            SocialAccount account = socialAccountService.getSocialAccountById(request.getSocialAccountId());
+            post.setSocialAccount(account);
+        }
+        
+        // Set CreatedBy relationship
+        if (request.getCreatedById() != null) {
+            User createdBy = userService.getUserById(request.getCreatedById());
+            post.setCreatedBy(createdBy);
+        }
+        
         return post;
     }
 }
