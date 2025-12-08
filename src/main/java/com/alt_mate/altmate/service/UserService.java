@@ -1,17 +1,19 @@
 package com.alt_mate.altmate.service;
 
-import com.alt_mate.altmate.exception.BadRequestException;
-import com.alt_mate.altmate.model.User;
-import com.alt_mate.altmate.model.UserRole;
-import com.alt_mate.altmate.repository.UserRepository;
-import lombok.RequiredArgsConstructor;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
-import java.util.List;
-import java.util.Optional;
+import com.alt_mate.altmate.exception.BadRequestException;
+import com.alt_mate.altmate.model.User;
+import com.alt_mate.altmate.model.UserRole;
+import com.alt_mate.altmate.repository.UserRepository;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
@@ -154,5 +156,22 @@ public class UserService {
     
     public boolean existsByEmail(String email) {
         return userRepository.existsByEmail(email);
+    }
+    
+    @Transactional
+    public User updateUserRoles(Long userId, List<UserRole> roles) {
+        User user = getUserById(userId);
+        
+        if (roles != null && !roles.isEmpty()) {
+            // Set the primary role (first in the list)
+            user.setRole(roles.get(0));
+            
+            // Store all roles in the roles set
+            user.getRoles().clear();
+            user.getRoles().addAll(roles);
+        }
+        
+        user.setUpdatedAt(LocalDateTime.now());
+        return userRepository.save(user);
     }
 }

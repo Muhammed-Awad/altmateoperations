@@ -1,17 +1,31 @@
 package com.alt_mate.altmate.controller;
 
-import com.alt_mate.altmate.DTO.*;
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.DTO.ChangePasswordRequest;
+import com.alt_mate.altmate.DTO.UserCreateRequest;
+import com.alt_mate.altmate.DTO.UserDTO;
+import com.alt_mate.altmate.DTO.UserUpdateRequest;
 import com.alt_mate.altmate.mapper.UserMapper;
 import com.alt_mate.altmate.model.User;
 import com.alt_mate.altmate.model.UserRole;
 import com.alt_mate.altmate.service.UserService;
+
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/users")
@@ -111,5 +125,13 @@ public class UserController {
     public ResponseEntity<ApiResponse<List<UserDTO>>> searchUsers(@RequestParam String name) {
         List<User> users = userService.searchUsersByName(name);
         return ResponseEntity.ok(ApiResponse.success(userMapper.toDTOList(users)));
+    }
+    
+    @PutMapping("/{id}/roles")
+    public ResponseEntity<ApiResponse<UserDTO>> updateUserRoles(
+            @PathVariable Long id,
+            @RequestBody List<UserRole> roles) {
+        User user = userService.updateUserRoles(id, roles);
+        return ResponseEntity.ok(ApiResponse.success("User roles updated successfully", userMapper.toDTO(user)));
     }
 }
