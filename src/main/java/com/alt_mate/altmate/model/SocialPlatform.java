@@ -7,5 +7,7 @@ public enum SocialPlatform {
     TWITTER,      // X/Twitter
     LINKEDIN,
     SNAPCHAT,
-    TIKTOK
+    TIKTOK,
+    WHATSAPP,     // WhatsApp Business
+    MESSENGER     // Facebook Messenger
 }

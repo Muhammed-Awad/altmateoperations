@@ -49,6 +49,26 @@ public class SocialMediaIntegrationService {
     @Value("${social.snapchat.client-secret:}")
     private String snapchatClientSecret;
     
+    // WhatsApp Business
+    @Value("${social.whatsapp.phone-number-id:}")
+    private String whatsappPhoneNumberId;
+    
+    @Value("${social.whatsapp.business-account-id:}")
+    private String whatsappBusinessAccountId;
+    
+    @Value("${social.whatsapp.access-token:}")
+    private String whatsappAccessToken;
+    
+    // Messenger
+    @Value("${social.messenger.page-access-token:}")
+    private String messengerPageAccessToken;
+    
+    @Value("${social.messenger.verify-token:}")
+    private String messengerVerifyToken;
+    
+    @Value("${social.messenger.app-secret:}")
+    private String messengerAppSecret;
+    
     @Value("${app.base-url:http://localhost:8081}")
     private String baseUrl;
     
@@ -115,6 +135,26 @@ public class SocialMediaIntegrationService {
                     snapchatClientId,
                     redirectUri,
                     "snapchat-marketing-api",
+                    clientId
+                );
+                
+            case WHATSAPP:
+                // WhatsApp Business uses embedded signup flow - return setup URL
+                return String.format(
+                    "https://www.facebook.com/v18.0/dialog/oauth?client_id=%s&redirect_uri=%s&scope=%s&response_type=code&state=%s",
+                    metaAppId,
+                    redirectUri,
+                    "whatsapp_business_management,whatsapp_business_messaging",
+                    clientId
+                );
+                
+            case MESSENGER:
+                // Messenger uses Facebook Pages - return setup URL
+                return String.format(
+                    "https://www.facebook.com/v18.0/dialog/oauth?client_id=%s&redirect_uri=%s&scope=%s&response_type=code&state=%s",
+                    metaAppId,
+                    redirectUri,
+                    "pages_messaging,pages_manage_metadata,pages_manage_engagement",
                     clientId
                 );
                 
@@ -186,6 +226,15 @@ public class SocialMediaIntegrationService {
                 HttpEntity<Map<String, String>> snapRequest = new HttpEntity<>(snapBody, snapHeaders);
                 ResponseEntity<Map> snapResponse = restTemplate.postForEntity(url, snapRequest, Map.class);
                 return (String) snapResponse.getBody().get("access_token");
+                
+            case WHATSAPP:
+            case MESSENGER:
+                // WhatsApp and Messenger use Meta OAuth - same as Facebook
+                url = String.format(
+                    "%s/oauth/access_token?client_id=%s&client_secret=%s&redirect_uri=%s&code=%s",
+                    META_GRAPH_API, metaAppId, metaAppSecret, redirectUri, code
+                );
+                break;
                 
             default:
                 throw new RuntimeException("Unsupported platform: " + platform);
@@ -288,6 +337,23 @@ public class SocialMediaIntegrationService {
                 info.put("name", (String) snapData.get("display_name"));
                 return info;
                 
+            case WHATSAPP:
+                // WhatsApp Business - get phone number info
+                url = String.format("%s/%s?access_token=%s", META_GRAPH_API, whatsappPhoneNumberId, accessToken);
+                ResponseEntity<Map> whatsappResponse = restTemplate.getForEntity(url, Map.class);
+                info.put("id", (String) whatsappResponse.getBody().get("id"));
+                info.put("name", (String) whatsappResponse.getBody().get("display_phone_number"));
+                info.put("phone", (String) whatsappResponse.getBody().get("verified_name"));
+                return info;
+                
+            case MESSENGER:
+                // Messenger - get page info
+                url = String.format("%s/me?fields=id,name&access_token=%s", META_GRAPH_API, accessToken);
+                ResponseEntity<Map> messengerResponse = restTemplate.getForEntity(url, Map.class);
+                info.put("id", (String) messengerResponse.getBody().get("id"));
+                info.put("name", (String) messengerResponse.getBody().get("name"));
+                return info;
+                
             default:
                 throw new RuntimeException("Unsupported platform: " + platform);
         }
@@ -320,6 +386,10 @@ public class SocialMediaIntegrationService {
                 return publishToLinkedIn(account, message, mediaUrl);
             case SNAPCHAT:
                 return publishToSnapchat(account, message, mediaUrl);
+            case WHATSAPP:
+                return publishToWhatsApp(account, message, mediaUrl);
+            case MESSENGER:
+                return publishToMessenger(account, message, mediaUrl);
             default:
                 throw new RuntimeException("Unsupported platform: " + account.getPlatform());
         }
@@ -442,6 +512,79 @@ public class SocialMediaIntegrationService {
         // Snapchat API is primarily for ads, not organic posts
         // This is a placeholder for ad creative creation
         throw new RuntimeException("Snapchat organic posting not supported. Use Snapchat Ads API for campaigns.");
+    }
+    
+    private Map<String, String> publishToWhatsApp(SocialAccount account, String message, String mediaUrl) {
+        String url = String.format("%s/%s/messages", META_GRAPH_API, whatsappPhoneNumberId);
+        
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(account.getAccessToken());
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        Map<String, Object> body = new HashMap<>();
+        body.put("messaging_product", "whatsapp");
+        body.put("to", account.getAccountId()); // This should be the recipient's WhatsApp number
+        
+        if (mediaUrl != null && !mediaUrl.isEmpty()) {
+            Map<String, Object> imageMessage = new HashMap<>();
+            imageMessage.put("type", "image");
+            Map<String, Object> image = new HashMap<>();
+            image.put("link", mediaUrl);
+            if (message != null && !message.isEmpty()) {
+                image.put("caption", message);
+            }
+            imageMessage.put("image", image);
+            body.putAll(imageMessage);
+        } else {
+            body.put("type", "text");
+            Map<String, String> text = new HashMap<>();
+            text.put("body", message);
+            body.put("text", text);
+        }
+        
+        HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);
+        ResponseEntity<Map> response = restTemplate.postForEntity(url, request, Map.class);
+        
+        Map<String, String> result = new HashMap<>();
+        result.put("messageId", (String) response.getBody().get("messages"));
+        result.put("platform", "WhatsApp");
+        return result;
+    }
+    
+    private Map<String, String> publishToMessenger(SocialAccount account, String message, String mediaUrl) {
+        String url = String.format("%s/me/messages", META_GRAPH_API);
+        
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(account.getAccessToken());
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        
+        Map<String, Object> body = new HashMap<>();
+        body.put("messaging_type", "UPDATE");
+        
+        Map<String, String> recipient = new HashMap<>();
+        recipient.put("id", account.getAccountId()); // This should be the recipient's PSID
+        body.put("recipient", recipient);
+        
+        Map<String, Object> messageContent = new HashMap<>();
+        if (mediaUrl != null && !mediaUrl.isEmpty()) {
+            Map<String, Object> attachment = new HashMap<>();
+            attachment.put("type", "image");
+            Map<String, String> payload = new HashMap<>();
+            payload.put("url", mediaUrl);
+            attachment.put("payload", payload);
+            messageContent.put("attachment", attachment);
+        } else {
+            messageContent.put("text", message);
+        }
+        body.put("message", messageContent);
+        
+        HttpEntity<Map<String, Object>> request = new HttpEntity<>(body, headers);
+        ResponseEntity<Map> response = restTemplate.postForEntity(url, request, Map.class);
+        
+        Map<String, String> result = new HashMap<>();
+        result.put("messageId", (String) response.getBody().get("message_id"));
+        result.put("platform", "Messenger");
+        return result;
     }
     
     /**
