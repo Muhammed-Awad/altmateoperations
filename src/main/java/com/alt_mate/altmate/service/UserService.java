@@ -49,6 +49,33 @@ public class UserService {
     }
     
     @Transactional
+    public int deleteUsers(List<Long> userIds) {
+        if (userIds == null || userIds.isEmpty()) {
+            throw new BadRequestException("User IDs list cannot be empty");
+        }
+        
+        int deletedCount = 0;
+        for (Long userId : userIds) {
+            try {
+                User user = getUserById(userId);
+                userRepository.delete(user);
+                deletedCount++;
+            } catch (RuntimeException e) {
+                // Skip users that don't exist
+                continue;
+            }
+        }
+        return deletedCount;
+    }
+    
+    @Transactional
+    public int deleteAllUsers() {
+        long count = userRepository.count();
+        userRepository.deleteAll();
+        return (int) count;
+    }
+    
+    @Transactional
     public User deactivateUser(Long userId) {
         User user = getUserById(userId);
         user.setIsActive(false);

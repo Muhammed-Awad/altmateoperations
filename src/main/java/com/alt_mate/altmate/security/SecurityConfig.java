@@ -56,11 +56,17 @@ public class SecurityConfig {
             .exceptionHandling(exception -> exception.authenticationEntryPoint(unauthorizedHandler))
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**", "/api/public/**").permitAll()
+                .requestMatchers("/api/auth/**", "/api/public/**", "/api/facebook/callback", "/api/social/callback/**").permitAll()
+                // Users endpoints - Only ADMIN can create, update, delete. ADMIN and COORDINATOR can read
                 .requestMatchers(HttpMethod.GET, "/api/users/**").hasAnyRole("ADMIN", "COORDINATOR")
                 .requestMatchers(HttpMethod.POST, "/api/users/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/api/users/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.DELETE, "/api/users/**").hasRole("ADMIN")
+                // Clients endpoints - ADMIN and COORDINATOR can manage clients
+                .requestMatchers(HttpMethod.GET, "/api/clients/**").hasAnyRole("ADMIN", "COORDINATOR")
+                .requestMatchers(HttpMethod.POST, "/api/clients/**").hasAnyRole("ADMIN", "COORDINATOR")
+                .requestMatchers(HttpMethod.PUT, "/api/clients/**").hasAnyRole("ADMIN", "COORDINATOR")
+                .requestMatchers(HttpMethod.DELETE, "/api/clients/**").hasAnyRole("ADMIN", "COORDINATOR")
                 .anyRequest().authenticated()
             )
             .authenticationProvider(authenticationProvider())

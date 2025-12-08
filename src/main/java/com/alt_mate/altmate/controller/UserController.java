@@ -89,6 +89,24 @@ public class UserController {
         return ResponseEntity.ok(ApiResponse.success("User deleted successfully", null));
     }
     
+    @DeleteMapping("/bulk")
+    public ResponseEntity<ApiResponse<String>> deleteUsers(@Valid @RequestBody BulkDeleteRequest request) {
+        int deletedCount = userService.deleteUsers(request.getUserIds());
+        return ResponseEntity.ok(ApiResponse.success(
+                deletedCount + " user(s) deleted successfully", 
+                null
+        ));
+    }
+    
+    @DeleteMapping("/all")
+    public ResponseEntity<ApiResponse<String>> deleteAllUsers() {
+        int deletedCount = userService.deleteAllUsers();
+        return ResponseEntity.ok(ApiResponse.success(
+                "All users deleted successfully. Total: " + deletedCount, 
+                null
+        ));
+    }
+    
     @GetMapping("/search")
     public ResponseEntity<ApiResponse<List<UserDTO>>> searchUsers(@RequestParam String name) {
         List<User> users = userService.searchUsersByName(name);

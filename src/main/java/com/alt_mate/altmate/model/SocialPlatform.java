@@ -3,8 +3,9 @@ package com.alt_mate.altmate.model;
 public enum SocialPlatform {
     FACEBOOK,
     INSTAGRAM,
-    TIKTOK,
+    THREADS,
+    TWITTER,      // X/Twitter
     LINKEDIN,
     SNAPCHAT,
-    X_TWITTER
+    TIKTOK
 }

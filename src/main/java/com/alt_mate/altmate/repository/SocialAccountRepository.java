@@ -25,6 +25,8 @@ public interface SocialAccountRepository extends JpaRepository<SocialAccount, Lo
     
     Optional<SocialAccount> findByAccountId(String accountId);
     
+    Optional<SocialAccount> findByPlatformAndAccountId(SocialPlatform platform, String accountId);
+    
     @Query("SELECT sa FROM SocialAccount sa WHERE sa.client.id = :clientId AND sa.platform = :platform AND sa.isActive = true")
     Optional<SocialAccount> findActiveAccountByClientAndPlatform(@Param("clientId") Long clientId, 
                                                                   @Param("platform") SocialPlatform platform);

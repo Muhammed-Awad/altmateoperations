@@ -7,5 +7,6 @@ public enum ClientIndustry {
     FASHION,
     RETAIL,
     SERVICES,
+    WEB_DEVELOPMENT,
     OTHER
 }

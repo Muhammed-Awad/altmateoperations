@@ -18,7 +18,8 @@ public class WebMvcCorsConfig implements WebMvcConfigurer {
                     "http://localhost:3000",    // React default
                     "http://localhost:4200",    // Angular default
                     "http://localhost:8081",    // Vue default
-                    "http://localhost:5173"     // Vite default
+                    "http://localhost:5173",     // Vite default
+                    "http://192.168.1.5:3000"
                 )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
                 .allowedHeaders("*")
