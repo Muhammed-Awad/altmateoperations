@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alt_mate.altmate.DTO.ApiResponse;
+import com.alt_mate.altmate.DTO.BulkDeleteRequest;
 import com.alt_mate.altmate.DTO.ChangePasswordRequest;
 import com.alt_mate.altmate.DTO.UserCreateRequest;
 import com.alt_mate.altmate.DTO.UserDTO;
